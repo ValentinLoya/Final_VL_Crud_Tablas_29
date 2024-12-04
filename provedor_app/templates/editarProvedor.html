@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarProvedor/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="number" id="txtcodigo" name="txtcodigo" class="form-control" value="{{ mi_provedor.id_provedor }}" readonly>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" value="{{ mi_provedor.nombre }}" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtdireccion" name="txtdireccion" class="form-control" value="{{ mi_provedor.direccion }}" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtempresa" name="txtempresa" class="form-control" value="{{ mi_provedor.empresa }}" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" id="txtcelular" name="txtcelular" class="form-control" value="{{ mi_provedor.num_celular }}" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="date" id="txtfecha" name="txtfecha" class="form-control" value="{{ fecha_de_recorrido }}" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" id="txtsucursal" name="txtsucursal" class="form-control" value="{{ mi_provedor.id_sucursal }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

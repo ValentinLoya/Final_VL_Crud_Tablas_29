@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cuerpo %}
+<div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <h1>Registrar Producto</h1>
+        <div class="card">
+            <div class="card-body">
+                <form action="/registrarProducto/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="number" id="txtcodigo" name="txtcodigo" class="form-control" placeholder="Código del Producto" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" id="txtsucursal" name="txtsucursal" class="form-control" placeholder="ID de Sucursal" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" placeholder="Nombre del Producto" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" id="txtstock" name="txtstock" class="form-control" placeholder="Stock del Producto" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" id="txtprovedor" name="txtprovedor" class="form-control" placeholder="ID del Proveedor" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="number" step="0.01" id="numprecio" name="numprecio" class="form-control" placeholder="Precio del Producto" required>
+                    </div>
+                    <div class="form-group py-3">
+                        <input type="text" id="txtmarca" name="txtmarca" class="form-control" placeholder="Marca del Producto" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <img class="w-50" src="{% static 'img/productos.jpg' %}" width="400" height="400" alt="">
+        <h1>Listado de Productos</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Código</th>
+                        <th>Sucursal</th>
+                        <th>Nombre</th>
+                        <th>Stock</th>
+                        <th>Proveedor</th>
+                        <th>Precio</th>
+                        <th>Marca</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in misproductos %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ producto.id_producto }}</td>
+                        <td>{{ producto.id_sucursal }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.stock }}</td>
+                        <td>{{ producto.id_provedor }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.marca }}</td>
+                        <td><a href="seleccionarProducto/{{ producto.id_producto }}" class="btn btn-info">Editar</a></td>
+                        <td><a href="borrarProducto/{{ producto.id_producto }}" class="btn btn-danger">Borrar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
