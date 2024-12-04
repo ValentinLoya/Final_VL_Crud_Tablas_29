@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarCliente/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="number" name="id_cliente" class="form-control" value="{{ cliente.id_cliente }}" readonly>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" name="nombre" class="form-control" value="{{ cliente.nombre }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="number" name="edad" class="form-control" value="{{ cliente.edad }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="text" name="sexo" class="form-control" value="{{ cliente.sexo }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="email" name="correo_electronico" class="form-control" value="{{ cliente.correo_electronico }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="number" step="0.01" name="presupuesto" class="form-control" value="{{ cliente.presupuesto }}" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
