@@ -3,7 +3,7 @@ Control Escolar Tablas de Django
 
 ## Proyecto Final
 - Inicio
-- ![image](https://github.com/user-attachments/assets/ea04e0f6-9fb7-4795-b81b-16aa537effd0)
+- ![image](https://github.com/user-attachments/assets/5dea6d42-df9d-4b1f-9fbe-f31cb24d4c79)
 - Sucursales
 - ![image](https://github.com/user-attachments/assets/6220ab33-0ccc-4bc9-a7c6-a326eb6c5f52)
 - ![image](https://github.com/user-attachments/assets/cfa7b292-97d4-4248-8087-644f018adea5)
