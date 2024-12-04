@@ -17,8 +17,9 @@ Control Escolar Tablas de Django
 - ![image](https://github.com/user-attachments/assets/d563aa9d-9aa2-4ebd-ab79-3ca7981d9b4c)
 
 - Clientes
-- ![image](https://github.com/user-attachments/assets/0c44f0c1-f671-4a10-a5fc-eb67305d6ae1)
-- ![image](https://github.com/user-attachments/assets/77d1ef65-59b1-43c9-be0b-0f25eb265049)
+- ![image](https://github.com/user-attachments/assets/27742fae-af9a-40f6-83b8-9eec535d7021)
+- ![image](https://github.com/user-attachments/assets/0d6de63c-b44a-43e5-b799-d05e453450f0)
+
 
 - Empleados
 - ![image](https://github.com/user-attachments/assets/40f01dc4-f5eb-4f04-a597-c89ad2a3773e)
